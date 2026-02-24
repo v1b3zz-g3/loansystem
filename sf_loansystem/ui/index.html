@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadowfall Banking</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app" class="hidden">
+        <div class="dashboard-container">
+            <aside class="sidebar">
+                <div class="brand">
+                    <h2>Pacific Bank</h2>
+                </div>
+                <nav>
+                    <button class="nav-btn active" data-target="overview">Overview</button>
+                    <button class="nav-btn" data-target="apply">Apply for Loan</button>
+                    <button class="nav-btn" data-target="active-loans">My Loans</button>
+                    <button class="nav-btn hidden" id="nav-banker" data-target="banker-panel">Banker Panel</button>
+                </nav>
+            </aside>
+
+            <main class="main-content">
+                <header>
+                    <div class="header-info">
+                        <h1>Loan Management</h1>
+                        <p id="welcome-text">Welcome back, Player 👋</p>
+                    </div>
+                    <button class="btn-primary" id="btn-header-apply">Apply for Loan</button>
+                </header>
+                
+                <div class="divider"></div>
+
+                <section id="overview" class="tab-content active">
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <span class="metric-label">ACTIVE LOANS</span>
+                            <h2 id="metric-active-loans">$0.00</h2>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-label">CREDIT SCORE</span>
+                            <h2 id="metric-credit-score">0</h2>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" id="credit-progress"></div>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-label">CREDIT LINE</span>
+                            <h2 id="metric-credit-line">$0.00</h2>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-label">APPLICATIONS</span>
+                            <h2 id="metric-applications">0</h2>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-label">MONEY OWED</span>
+                            <h2 id="metric-money-owed" class="warning-text">$0.00</h2>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-label">MISSED PAYMENTS</span>
+                            <h2 id="metric-missed">0</h2>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="apply" class="tab-content">
+                    <div class="form-card">
+                        <h3>New Loan Application</h3>
+                        <form id="loan-form">
+                            <div class="form-group">
+                                <label>Loan Type</label>
+                                <select id="loan-type">
+                                    <option value="Personal Loan">Personal Loan</option>
+                                    <option value="Business Loan">Business Loan</option>
+                                    <option value="Home Loan">Home Loan</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Loan Amount ($)</label>
+                                <input type="number" id="loan-amount" placeholder="e.g. 5000" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Duration (Weeks)</label>
+                                <select id="loan-duration">
+                                    <option value="1">1 Week</option>
+                                    <option value="2">2 Weeks</option>
+                                    <option value="3">3 Weeks</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Reason for Loan</label>
+                                <textarea id="loan-reason" rows="3" placeholder="Explain why you need this loan..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit">Submit Application</button>
+                        </form>
+                    </div>
+                </section>
+
+                <section id="active-loans" class="tab-content">
+                    <div class="loans-list" id="loans-container">
+                        </div>
+                </section>
+
+                <section id="banker-panel" class="tab-content">
+                    <div class="banker-controls">
+                        <input type="text" id="banker-search" placeholder="Search Citizen ID or Loan ID...">
+                        <select id="banker-filter">
+                            <option value="all">All Loans</option>
+                            <option value="0">Pending</option>
+                            <option value="1">Approved</option>
+                            <option value="2">Rejected</option>
+                            <option value="3">Paid</option>
+                        </select>
+                    </div>
+                    <div class="loans-list" id="banker-loans-container">
+                        </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -4,7 +4,7 @@ Config.debug = false
 
 Config.Framework = 'qb' -- 'qb', 'qbox', 'esx'
 Config.Phone = 'qb'     -- 'qb', 'qs', 'lb', 'road', 'yseries', 'snappy-phone', 'none'
-Config.Target = 'qb'    -- 'qb', 'ox'
+Config.Target = 'ox'    -- 'qb', 'ox'
 
 if Config.Target == 'qb' then
     Config.TargetZones = {
@@ -31,7 +31,7 @@ end
 
 Config.BankerJobs = { -- Job that can approve or decline loans
     -- ['job_name'] = grade_level,
-    ["banker"] = 2,
+    ["banker"] = 0,
 }
 
 Config.LoanIntervals = 10 * 60 * 1000 -- 10 minutes
