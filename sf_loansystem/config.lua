@@ -4,7 +4,7 @@ Config.debug = false
 
 Config.Framework = 'qb' -- 'qb', 'qbox', 'esx'
 Config.Phone = 'qb'     -- 'qb', 'qs', 'lb', 'road', 'yseries', 'snappy-phone', 'none'
-Config.Target = 'ox'    -- 'qb', 'ox'
+Config.Target = 'qb'    -- 'qb', 'ox'
 
 if Config.Target == 'qb' then
     Config.TargetZones = {

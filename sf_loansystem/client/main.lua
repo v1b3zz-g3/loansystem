@@ -42,7 +42,7 @@ end
 
 -- Replaces OpenMenu and OpenBankerMenu to route into the unified NUI
 local function OpenNUIDashboard(isBanker)
-    local PlayerData = Framework:GetPlayer(source) or { fullname = "Citizen" }
+    local PlayerData = Framework:GetPlayerInfo()
     local scores = lib.callback.await('loan-system:server:getMyScores', false)
     local rawLoans = lib.callback.await('loan-system:server:getMyLoans', false)
     
