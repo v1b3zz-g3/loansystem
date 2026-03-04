@@ -62,7 +62,7 @@ local function OpenNUIDashboard(isBanker)
             
             -- Check missed payments
             for _, due in pairs(details.dues) do
-                if not due.paid and os.time() > due.time then
+                if not due.paid and GetCloudTimeAsInt() > due.time then
                     missedPayments = missedPayments + 1
                 end
             end
